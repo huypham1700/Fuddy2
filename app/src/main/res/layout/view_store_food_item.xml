@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearShopItem"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageViewFoodIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/hamburger"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtStoreFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Food Name"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorPurple"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtStoreFoodPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="asdsaadasd"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:layout_marginStart="120dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btnDown"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="#fff3f3f3"
+                    android:src="@drawable/minus" />
+
+                <TextView
+                    android:id="@+id/txtOrderQuantityChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:inputType="number"
+                    android:text="1"
+                    android:textSize="15dp" />
+
+                <ImageButton
+                    android:id="@+id/btnUp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="#fff3f3f3"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/plus" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

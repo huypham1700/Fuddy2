@@ -1,0 +1,30 @@
+/*
+    Common
+*/
+
+E500 : Exception 500
+SC : query success and return data
+DT01 : Data invalid
+
+
+/*
+    TokenKey : TK
+*/
+
+TK01 : TokenKey is valid
+
+/*
+    Store : ST
+*/
+
+ST01 : Store not exist in database
+
+/*
+    Food : FD
+*/
+
+FD01 : Food not exist in database
+
+
+thieety description store
+rating store thiếu userIds

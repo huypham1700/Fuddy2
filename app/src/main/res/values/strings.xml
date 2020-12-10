@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">VietIS_Fuddy</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="shop_name">This is the name of a shop</string>
+    <string name="food_name">This is the name of a shop</string>
+    <string name="shop_address">3A Building, Duy Tan, Cau Giay</string>
+    <string name="shop_voucher">20% off</string>
+    <string name="food_price">100đ</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <!-- [START fcm_default_icon_string] -->
+    <string name="default_notification_channel_name" translatable="true">FuddyRemotePushNotification</string>
+    <!-- [END fcm_default_icon_string] -->
+    <string name="fcm_message">FCM Message</string>
+    <string name="search_hint">Find places, items, address...</string>
+    <string name="title_activity_bottom_navi_test">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_setting">Setting</string>
+    <string name="title_store">Store</string>
+    <string name="title_order">Order</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="nav_host_fragment">Notifications</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <!-- Google Map API Key -->
+    <string name="google_maps_key">AIzaSyB2LlIj3sk2akFpnpNcXzX9_NS08Xda1sE</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home">MainActivity</string>
+</resources>
