@@ -7,10 +7,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.vietis.Data.entity.Order;
-import com.example.vietis.Data.inteface.IView;
-import com.example.vietis.R;
+import com.example.vietis_fuddy.R;
 import com.squareup.picasso.Picasso;
+
+import Entity.Order;
+import Interface.IView;
 
 public class OrderItemViewHolder extends RecyclerView.ViewHolder implements IView {
 

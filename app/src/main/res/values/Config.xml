@@ -5,7 +5,7 @@
     10.1.35.170
     192.168.1.107
     */
-    <string name="HOST_NAME">10.1.35.166</string>
+    <string name="HOST_NAME">192.168.4.107</string>
     <string name="POST">3000</string>
     <string name="NUMBER_ITEM_GET_FORM_API">4</string>
 
@@ -26,8 +26,6 @@
     <string name="USER_LOGIN">users/login</string>
     <string name="USER_REGISTER">users/register</string>
     <string name="USER_SETTING">users/setting</string>
-    <string name="USER_LON">users/login</string>
-    <string name="USER_LOGN">users/login</string>
     <string name="NOTI_GETALL">noti/getListNoti</string>
     <string name="ADD_TOKEN_KEY">noti/addTokenKey</string>
     <string name="ADD_Order">order/add</string>

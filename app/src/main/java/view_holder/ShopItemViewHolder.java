@@ -9,12 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.vietis.Data.IRepository.repository.Config;
-import com.example.vietis.R;
-import com.example.vietis.Data.entity.Shop;
-import com.example.vietis.Data.inteface.IListView;
-import com.example.vietis.Data.inteface.IView;
+import com.example.vietis_fuddy.R;
 import com.squareup.picasso.Picasso;
+
+import Entity.Shop;
+import Interface.IListView;
+import Interface.IView;
 
 public class ShopItemViewHolder extends RecyclerView.ViewHolder implements IView {
 
@@ -48,7 +48,7 @@ public class ShopItemViewHolder extends RecyclerView.ViewHolder implements IView
                 }
             }
         };
-        Config.setChildViewOnClickListener(linearLayoutShopItem, listener);
+//        Config.setChildViewOnClickListener(linearLayoutShopItem, listener);
 
         Picasso.get().load(shop.getImageURL())
                 .placeholder(R.drawable.ic_launcher_foreground)

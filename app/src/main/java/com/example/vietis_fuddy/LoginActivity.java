@@ -15,10 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.example.vietis.Data.entity.User;
-import com.example.vietis.Data.inteface.IView;
-import com.example.vietis.Data.view_model.LoginActivityViewModel;
-import com.example.vietis.Utilities.common.UserApp;
+
+import Entity.User;
+import Interface.IView;
+import Ultilities.UserApp;
+import Viewmodel.AccountActivityViewModel;
 
 public class LoginActivity extends AppCompatActivity implements IView {
 
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity implements IView {
     private EditText edtSigninEmail;
     private EditText edtSigninPassword;
     private LinearLayout llSignin;
-    private LoginActivityViewModel loginActivityViewModel;
+    private AccountActivityViewModel accountActivityViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,36 +46,21 @@ public class LoginActivity extends AppCompatActivity implements IView {
         edtSigninEmail = findViewById(R.id.edtSigninEmail);
         edtSigninPassword = findViewById(R.id.edtSigninPassword);
         llSignin= findViewById(R.id.llSignIn);
-        loginActivityViewModel = new LoginActivityViewModel();
+        accountActivityViewModel = new AccountActivityViewModel();
     }
 
     @Override
     public void setupUI() {
-        llSignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-                Log.d("onclick","asdasdasda");
+        llSignin.setOnClickListener(v -> {
+            login();
+            Log.d("onclick","asdasdasda");
 
-            }
         });
-        txtSignUpAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(com.example.vietis.activities.LoginActivity.this, RegisterActivity.class));
-            }
-        });
+        txtSignUpAccount.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, RegisterActivity.class)));
     }
 
-
-
     public void navigateToHomeActivity(User user){
-
-//        Intent intent = new Intent(LoginActivity.this, Home2Activity.class);
-        //   intent.putExtra("userid", user.getId());
-        //  this.startActivity(intent);
-
-        Intent intent = new Intent(com.example.vietis.activities.LoginActivity.this, HomeAppActivity.class);
+        Intent intent = new Intent(LoginActivity.this, HomeAppActivity.class);
         UserApp.user.setTokenKey(user.getTokenKey());
         UserApp.user.setAddress(user.getAddress());
         UserApp.user.setName(user.getName());
@@ -95,28 +81,12 @@ public class LoginActivity extends AppCompatActivity implements IView {
     }
 
     private void login() {
-        loginActivityViewModel.login(getEmail(), getPassword());
-        loginActivityViewModel.getUser().observe(this, new Observer<User>() {
-            @Override
-            public void onChanged(User user) {
-                if(user.getId() !=0){
-                    navigateToHomeActivity(user);
-                }
+        accountActivityViewModel.login(getEmail(), getPassword());
+        accountActivityViewModel.getUser().observe(this, user -> {
+            if(user.getId() !=0){
+                navigateToHomeActivity(user);
             }
         });
     }
 
-    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //do your code snippet here.
-            finish();
-        }
-    };
-
-    @Override
-    protected void onDestroy() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
-        super.onDestroy();
-    }
 }

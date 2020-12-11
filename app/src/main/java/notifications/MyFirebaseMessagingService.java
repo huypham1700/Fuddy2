@@ -38,13 +38,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     public void pushRemoteNotification(Map<String, String> data) {
         Context context = this;
-        Intent intent;
+        Intent intent = new Intent();
         if (data.get("idType").equals("2")) {
-            intent = new Intent(context, FoodDetailActivity.class);
-            intent.putExtra("id", data.get("foodId"));
+//            intent = new Intent(context, FoodDetailActivity.class);
+//            intent.putExtra("id", data.get("foodId"));
         } else {
-            intent = new Intent(context, StoreDetailActivity.class);
-            intent.putExtra("id", data.get("storeId"));
+//            intent = new Intent(context, StoreDetailActivity.class);
+//            intent.putExtra("id", data.get("storeId"));
         }
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Notification notification = new NotificationCompat.Builder(context, CHANNEL_1_ID)

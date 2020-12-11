@@ -14,12 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
-import com.example.vietis.Data.inteface.IView;
-import com.example.vietis.Data.view_model.SplashActivityViewModel;
-import com.example.vietis.Utilities.notifications.MyFirebaseMessagingService;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+
+import Interface.IView;
+import Viewmodel.SplashActivityViewModel;
+import notifications.MyFirebaseMessagingService;
 
 public class SplashActivity extends AppCompatActivity implements IView {
 
@@ -56,13 +57,13 @@ public class SplashActivity extends AppCompatActivity implements IView {
                 }
                 String token = task.getResult();
                 splashActivityViewModel.deviceRegister(token);
-                splashActivityViewModel.getMsg().observe(com.example.vietis.activities.SplashActivity.this, new Observer<String>() {
+                splashActivityViewModel.getMsg().observe(SplashActivity.this, new Observer<String>() {
                     @Override
                     public void onChanged(String msg) {
-                        if(!msg.equals("")){
-                            Toast.makeText(com.example.vietis.activities.SplashActivity.this,msg,Toast.LENGTH_SHORT).show();
+                        if(msg.equals("Register new user successfully")){
+                            Toast.makeText(SplashActivity.this,msg,Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(com.example.vietis.activities.SplashActivity.this,"failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SplashActivity.this,"failed",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -74,7 +75,7 @@ public class SplashActivity extends AppCompatActivity implements IView {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(com.example.vietis.activities.SplashActivity.this, LoginActivity.class));
+                startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 finish();
             }
         }, 3000);

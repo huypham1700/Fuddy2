@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "833486104903",
+    "project_id": "fuddy2-4819f",
+    "storage_bucket": "fuddy2-4819f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833486104903:android:01bb780b5ab2de47728462",
+        "android_client_info": {
+          "package_name": "com.example.vietis_fuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833486104903-9nemm1qb2udt2voe63alocbfg5jrpn3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSheJxHG9nZ0E4hdp2zxyHVCGhL15L5kE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833486104903-9nemm1qb2udt2voe63alocbfg5jrpn3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

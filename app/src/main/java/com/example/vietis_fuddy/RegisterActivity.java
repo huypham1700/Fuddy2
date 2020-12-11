@@ -9,12 +9,13 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.vietis.Data.inteface.IView;
-import com.example.vietis.Data.view_model.RegisterActivityViewModel;
+import Interface.IView;
+import Viewmodel.AccountActivityViewModel;
+
 
 public class RegisterActivity extends AppCompatActivity implements IView {
 
-    private RegisterActivityViewModel registerActivityViewModel;
+    private AccountActivityViewModel accountActivityViewModel;
     private EditText txtEmail;
     private EditText txtPassword;
     private EditText txtConfirmPassword;
@@ -34,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity implements IView {
         txtPassword=findViewById(R.id.edtSignupPassword);
         txtConfirmPassword = findViewById(R.id.edtConfirmPassword);
         btnRegister = findViewById(R.id.llSignUp);
-        registerActivityViewModel = new RegisterActivityViewModel();
+        accountActivityViewModel = new AccountActivityViewModel();
     }
 
     private String getEmail() {
@@ -48,7 +49,7 @@ public class RegisterActivity extends AppCompatActivity implements IView {
 
     public void register() {
         if(txtPassword.getText().toString().equals(txtConfirmPassword.getText().toString()))
-        registerActivityViewModel.register(getEmail(), getPassword(), 1 + "");
+            accountActivityViewModel.register(getEmail(), getPassword());
         else{
             Toast.makeText(this, "Password doesn't match", Toast.LENGTH_SHORT).show();
         }
